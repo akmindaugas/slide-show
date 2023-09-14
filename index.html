@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>15 paskaitos_ND</title>
+</head>
+
+<body>
+<h1>Atsitiktinės teisybės generatorius</h1>
+<p><h2>Taisyklės</h2>
+    <li>1.Paspauskite mygtukų "Paleisti";</li>
+    <li>2.Mintyse apskaičiuokite kvadratinę šaknį iš pi er kvadratu;</li>
+    <li>3.Paspauskite mygtukų "Stabdyti";</li>
+    <li>4.Priklausomai nuo jūsų gebėjimo atlikti matematinius skaičiavimus, generatorius statistiškai tiksliai parinks vaizdą iliustruojanti kaip jūs praleisite likusią dienos dalį;</li>
+   <h1>Sekmės!</h1> 
+</p>
+
+<div class="buttons">
+    <button  onclick="changeSlide(event, 'changeSlide')" id="start" style="background-color: forestgreen;">Paleisti</button>
+    
+    <button onclick="stopSlideChanges(event, 'stopSlideChanges')" id="stop" style="background-color: goldenrod;">Stabdyti</button>
+ </div>
+
+ <button onclick="foo"(event, 'foo') id="paspausk" style="background-color: brown;">Tiesiog paspausk</button>
+ <div id="box" ></div>
+ 
+ 
+
+    <div id="slider-container">
+         <div class="slide"><img src="../img/1.jpg" alt="Slide 1"></div>
+        <div class="slide"><img src="../img/4.jpg" alt="Slide 2"></div>
+        <div class="slide"><img src="../img/2.jpg" alt="Slide 3"></div>
+        <div class="slide"><img src="../img/3.jpg" alt="Slide 4"></div>
+        <div class="slide"><img src="../img/5.jpg" alt="Slide 5"></div>
+        <div class="slide"><img src="../img/6.jpg" alt="Slide 6"></div>
+        <div class="slide"><img src="../img/7.jpg" alt="Slide 7"></div>
+        <div class="slide"><img src="../img/8.jpg" alt="Slide 8"></div>
+        <div class="slide"><img src="../img/9.jpg" alt="Slide 9"></div>
+        <div class="slide"><img src="../img/10.jpg" alt="Slide 10"></div>
+        <div class="slide"><img src="../img/11.jpg" alt="Slide 11"></div>
+        <div class="slide"><img src="../img/12.jpg" alt="Slide 12"></div>
+        <div class="slide"><img src="../img/13.jpg" alt="Slide 13"></div>
+        <div class="slide"><img src="../img/14.jpg" alt="Slide 14"></div>
+       
+    
+    </div>
+ <script>
+    ///catch button 
+var caller=document.getElementById("paspausk")
+var box = document.getElementById("box");
+
+function foo()
+{
+    var randX = Math.floor(Math.random() * (window.innerWidth - 200));
+    var randY = Math.floor(Math.random() * (window.innerHeight - 200));
+    console.log([randX, randY]);
+    caller.removeEventListener('mouseenter', foo);
+    // caller.stop().animate({"left": randX + "px", "top": randY + "px"});
+}
+
+$(document).ready(function() {
+     caller.addEventListener('mouseenter', foo);
+    caller.addEventListener('click', function(){
+        alert('clicked!');
+    }); 
+});
+
+ </script>
+ <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+        /* Add your CSS styles for the slider container and slides here */
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        body{
+            display: flex;
+            flex-direction: column;
+            background-color: antiquewhite;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        #slider-container {
+            width: 600px;
+            height: 400px;
+            overflow: hidden;
+            position: relative;
+        }
+        .slide {
+            width: 100%;
+            height: 100%;
+            /* display: cover; */
+            object-fit: fill;
+            position: absolute; 
+        } 
+        .img{
+            object-fit: fill;
+
+            }
+        h1{
+            padding: 30px;
+        }
+        h2{
+            text-decoration-line: underline;
+        }
+         p{
+           text-align: center;
+        }
+
+        button{
+        width: 150px;
+        padding: 10px;
+        margin: 10px;
+        border: none;
+        border-radius: 10px;
+        position: relative;
+        cursor: pointer;
+
+        --border-size: 4px
+        }
+   
+        button::before{
+         content: '';
+         position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          z-index: -1;
+          border: var(--border-size) solid black;
+          border-radius: 10px;
+          transition: top, right, left, bottom, 0.5s ease-in-out;
+        }
+
+        button:hover::before,
+        button:focus::before{
+top: calc(var(--border-size)* -2);
+left: calc(var(--border-size)* -2);
+right: calc(var(--border-size)* -2);
+bottom: calc(var(--border-size)* -2);
+        }
+
+ /* catch button style */
+div.box{
+    width: 100px;
+    height: 100px;
+    background-color: #00FF00;
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    z-index: 1;
+}
+
+/* button#paspausk
+{
+    position: relative;
+    z-index: 2;   
+} */
